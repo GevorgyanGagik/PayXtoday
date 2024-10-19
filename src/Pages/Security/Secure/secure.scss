@@ -1,0 +1,130 @@
+.secure {
+  color: var(--white-color);
+  background-color: black;
+  padding: 10% 5%;
+  .secure__desc {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    p {
+      opacity: 0.8;
+    }
+    .title {
+      opacity: unset;
+    }
+    .green {
+      color: var(--green-color);
+    }
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+  }
+  .secure__logotypes {
+    display: flex;
+    align-items: center;
+    padding: 6% 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    @media (max-width: 650px) {
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+    .secure__logotypes__desc {
+      position: relative;
+      &:hover {
+        .secure__desc__hidden {
+          display: flex;
+          z-index: 2;
+        }
+        img {
+          opacity: 0.6;
+        }
+      }
+      .secure__desc__hidden {
+        display: none;
+        position: absolute;
+        font-size: 12px;
+        top: -70px;
+        padding: 5px 8px;
+        border-radius: 5px;
+        line-height: 18px;
+        color: #a6a6a6;
+        background-color: #0c0d0d;
+        border: 1px solid #141414;
+        animation-name: descAnim;
+        animation-duration: 400ms;
+        @keyframes descAnim {
+          from {
+            opacity: 0.5;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translate(0);
+          }
+        }
+      }
+    }
+  }
+  .secure__lists {
+    gap: 30px;
+    display: flex;
+    padding-left: 1.6%;
+    justify-content: space-between;
+    .secure__lists__item {
+      width: 30%;
+      .secure__list__title {
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: -0.5px;
+        padding-bottom: 10%;
+      }
+      .secure__list__description {
+        color: #999;
+      }
+      .secure__list__item__standart__list {
+        display: flex;
+        padding-top: 10%;
+        justify-content: center;
+        flex-direction: column;
+        li {
+          padding-left: 15px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          font-size: 20px;
+          line-height: 2.3;
+          .secure__list__i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #e5eeff;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      .secure__lists__item {
+        width: 100%;
+        .secure__list__item__standart__list {
+          padding-top: 5%;
+        }
+        .secure__list__title {
+          padding-bottom: 5%;
+        }
+      }
+    }
+  }
+}
